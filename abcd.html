@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather & Clock</title>
+  <style>
+    /* Resetting Default Styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #2b5876, #4e4376);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .clock {
+      font-size: 80px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-top: 20px;
+      text-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .date {
+      font-size: 40px;
+      font-weight: 500;
+      margin-top: 10px;
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .weather {
+      margin-top: 50px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .weather-icon {
+      width: 100px;
+      height: 100px;
+    }
+
+    .weather-details {
+      text-align: left;
+    }
+
+    .temperature {
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .description {
+      font-size: 24px;
+      text-transform: capitalize;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .clock, .date, .weather {
+      animation: fadeIn 1.5s ease;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .clock {
+        font-size: 60px;
+      }
+
+      .date {
+        font-size: 30px;
+      }
+
+      .temperature {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .clock {
+        font-size: 50px;
+      }
+
+      .date {
+        font-size: 25px;
+      }
+
+      .weather {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .temperature {
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Live Date, Time & Weather</h1>
+    <div id="clock" class="clock">00:00:00</div>
+    <div id="date" class="date">January 1, 2024</div>
+    <div class="weather">
+      <img id="weather-icon" class="weather-icon" src="https://via.placeholder.com/100" alt="Weather Icon">
+      <div class="weather-details">
+        <div id="temperature" class="temperature">25°C</div>
+        <div id="description" class="description">Partly Cloudy</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to update clock and date
+    function updateDateTime() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const clock = `${hours}:${minutes}:${seconds}`;
+      
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const date = now.toLocaleDateString('en-US', options);
+
+      document.getElementById('clock').textContent = clock;
+      document.getElementById('date').textContent = date;
+    }
+
+    // Update every second
+    setInterval(updateDateTime, 1000);
+
+    // Function to simulate weather data (replace with API)
+    function updateWeather() {
+      const temp = 28; // Replace with real API data
+      const desc = "Sunny"; // Replace with real API data
+      const icon = "https://via.placeholder.com/100"; // Replace with real API URL
+
+      document.getElementById('temperature').textContent = `${temp}°C`;
+      document.getElementById('description').textContent = desc;
+      document.getElementById('weather-icon').src = icon;
+    }
+
+    // Initialize
+    updateDateTime();
+    updateWeather();
+  </script>
+</body>
+</html>
