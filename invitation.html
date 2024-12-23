@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Invitation</title>
+  <style>
+    /* Global reset and box-sizing */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Body background */
+    body {
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Invitation card */
+    .invitation-card {
+      width: 90%;
+      max-width: 600px;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      animation: slideIn 1s ease-out;
+    }
+
+    /* Header Styling */
+    .invitation-card h1 {
+      font-size: 48px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .invitation-card h2 {
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: #feb47b;
+      letter-spacing: 1px;
+    }
+
+    /* Event details */
+    .details {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .details p {
+      margin-bottom: 10px;
+    }
+
+    /* Button styles */
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #feb47b;
+      color: #333;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 50px;
+      letter-spacing: 1px;
+      font-size: 18px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff7e5f;
+      transform: translateY(-3px);
+    }
+
+    /* Animation for the invitation card */
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-50%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Footer text */
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .footer a {
+      color: #feb47b;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="invitation-card">
+    <h1>You're Invited!</h1>
+    <h2>Join Us for a Special Event</h2>
+    <div class="details">
+      <p><strong>Date:</strong> January 15, 2024</p>
+      <p><strong>Time:</strong> 6:00 PM</p>
+      <p><strong>Venue:</strong> The Grand Hall, Downtown</p>
+      <p><strong>Dress Code:</strong> Formal</p>
+    </div>
+    <a href="#" class="btn">RSVP Now</a>
+    <div class="footer">
+      <p>For more information, visit <a href="#">our website</a></p>
+    </div>
+  </div>
+</body>
+</html>
