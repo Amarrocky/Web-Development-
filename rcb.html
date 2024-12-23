@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RCB Match Passes</title>
+  <style>
+    /* Global reset and box-sizing */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Body background */
+    body {
+      background: linear-gradient(135deg, #e60000, #d50032); /* RCB Red and dark red gradient */
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    /* Main container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Individual pass card styling */
+    .pass-card {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      width: 280px;
+      margin: 20px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pass-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Pass Title */
+    .pass-title {
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #feb47b; /* RCB Gold Accent */
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    /* Price styling */
+    .price {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      margin: 20px 0;
+    }
+
+    /* Features list */
+    .features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+
+    .features li {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    /* Button styling */
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #feb47b;
+      color: #333;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 50px;
+      letter-spacing: 1px;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff7e5f;
+      transform: translateY(-3px);
+    }
+
+    /* Title at the top */
+    .header {
+      font-size: 36px;
+      color: #fff;
+      margin-bottom: 40px;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer text */
+    .footer {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 40px;
+    }
+
+    .footer a {
+      color: #feb47b;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">RCB Match Passes</div>
+
+  <div class="container">
+    <!-- Pass 1: General Pass -->
+    <div class="pass-card">
+      <div class="pass-title">General Pass</div>
+      <div class="price">₹999</div>
+      <ul class="features">
+        <li>Entry to General Stands</li>
+        <li>Free Drink</li>
+        <li>Access to Fan Zone</li>
+      </ul>
+      <a href="#" class="btn">Buy Now</a>
+    </div>
+
+    <!-- Pass 2: VIP Pass -->
+    <div class="pass-card">
+      <div class="pass-title">VIP Pass</div>
+      <div class="price">₹2999</div>
+      <ul class="features">
+        <li>Exclusive VIP Stands</li>
+        <li>Complimentary Snacks</li>
+        <li>Meet & Greet with Players</li>
+      </ul>
+      <a href="#" class="btn">Buy Now</a>
+    </div>
+
+    <!-- Pass 3: Premium Pass -->
+    <div class="pass-card">
+      <div class="pass-title">Premium Pass</div>
+      <div class="price">₹5999</div>
+      <ul class="features">
+        <li>Front-row Seats</li>
+        <li>Free Meal</li>
+        <li>Exclusive Access to Lounge</li>
+        <li>Private Parking</li>
+      </ul>
+      <a href="#" class="btn">Buy Now</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>For more details, visit <a href="#">RCB Official Website</a></p>
+  </div>
+
+</body>
+</html>
